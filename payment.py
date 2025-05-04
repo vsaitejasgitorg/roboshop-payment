@@ -149,6 +149,7 @@ publisher = Publisher(app.logger)
 
 if __name__ == "__main__":
     sh = logging.StreamHandler(sys.stdout)
+    sh.stream.reconfigure(encoding='utf-8')
     sh.setLevel(logging.INFO)
     fmt = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s')
     app.logger.info('Payment gateway {}'.format(PAYMENT_GATEWAY))
